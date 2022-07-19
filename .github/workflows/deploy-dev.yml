@@ -1,5 +1,10 @@
 name: Deploy to dev
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   deploy:
     strategy:
@@ -23,7 +28,7 @@ jobs:
       - name: Publish
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod --dir=dist
+          args: deploy --prod --dir=dist --message "${{ github.event.head_commit.message }}"
         env:
           NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
