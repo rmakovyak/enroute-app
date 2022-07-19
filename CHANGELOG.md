@@ -1,3 +1,19 @@
+# v0.1.0 (Tue Jul 19 2022)
+
+#### 🚀 Enhancement
+
+- Staging! [#2](https://github.com/rmakovyak/enroute-app/pull/2) ([@rmakovyak](https://github.com/rmakovyak))
+
+#### ⚠️ Pushed to `main`
+
+- Update release ([@rmakovyak](https://github.com/rmakovyak))
+
+#### Authors: 1
+
+- Roman Makovyak ([@rmakovyak](https://github.com/rmakovyak))
+
+---
+
 # v0.0.1 (Tue Jul 19 2022)
 
 #### ⚠️ Pushed to `main`
