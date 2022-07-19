@@ -1,8 +1,6 @@
-name: Deploy to staging
+name: Deploy to production
 
 on:
-  release:
-    types: [created]
   workflow_dispatch:
 
 jobs:
@@ -16,7 +14,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Set env values
-        run: cat envs/staging/.env.${{ matrix.organization }} > .env.production
+        run: cat envs/production/.env.${{ matrix.organization }} > .env.production
       - name: Load .env file
         uses: xom9ikk/dotenv@v1.0.2
         with:
@@ -32,4 +30,3 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      ## Run full e2e tests
