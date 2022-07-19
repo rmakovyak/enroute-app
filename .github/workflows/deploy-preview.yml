@@ -1,0 +1,52 @@
+name: Deploy preview
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cancel_previous_runs:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: n1hility/cancel-previous-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+  deploy:
+    strategy:
+      matrix:
+        organization: ['apple', 'banana', 'peach']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: yarn install
+      - name: Set env values
+        run: cat .env.${{ matrix.organization }} > .env.production
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          mode: production
+      - name: Build Project
+        run: yarn build
+        env:
+          CI: true
+      - name: Publish
+        id: publish
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --message "${{ github.sha }}"
+        env:
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          comment-id: ${{ matrix.organization }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ${{ matrix.organization }} preview:
+            Preview URL:  ${{ steps.publish.outputs.NETLIFY_URL }} 
+            Logs: ${{ steps.publish.outputs.NETLIFY_LOGS_URL }}
+          edit-mode: replace
