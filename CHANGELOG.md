@@ -1,3 +1,15 @@
+# v0.1.1 (Tue Jul 19 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@rmakovyak](https://github.com/rmakovyak))
+
+#### Authors: 1
+
+- Roman Makovyak ([@rmakovyak](https://github.com/rmakovyak))
+
+---
+
 # v0.1.0 (Tue Jul 19 2022)
 
 #### 🚀 Enhancement
