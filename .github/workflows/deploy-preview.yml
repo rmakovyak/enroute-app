@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Set env values
-        run: cat dev/.env.${{ matrix.organization }} > .env.production
+        run: cat ./dev/.env.${{ matrix.organization }} > .env.production
       - name: Load .env file
         uses: xom9ikk/dotenv@v1.0.2
         with:
