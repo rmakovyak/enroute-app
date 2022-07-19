@@ -1,0 +1,29 @@
+name: Deploy to dev
+on: [push]
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        organization: ['apple', 'banana', 'peach']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: yarn install
+      - name: Set env values
+        run: cat .env.${{ matrix.organization }} > .env.production
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          mode: production
+      - name: Build Project
+        run: yarn build
+        env:
+          CI: true
+      - name: Publish
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod --dir=dist
+        env:
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
