@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "rmakovyak <roman.makovyak@scoutbee.com>",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
