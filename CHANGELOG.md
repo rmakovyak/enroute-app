@@ -1,3 +1,19 @@
+# v0.2.0 (Thu Jul 21 2022)
+
+#### 🚀 Enhancement
+
+- Update App.jsx [#4](https://github.com/rmakovyak/enroute-app/pull/4) ([@rmakovyak](https://github.com/rmakovyak))
+
+#### 🏠 Internal
+
+- Update deploy-preview.yml [#3](https://github.com/rmakovyak/enroute-app/pull/3) ([@rmakovyak](https://github.com/rmakovyak))
+
+#### Authors: 1
+
+- Roman Makovyak ([@rmakovyak](https://github.com/rmakovyak))
+
+---
+
 # v0.1.3 (Tue Jul 19 2022)
 
 #### ⚠️ Pushed to `main`
