@@ -7,7 +7,7 @@ jobs:
   deploy:
     strategy:
       matrix:
-        organization: ['apple', 'banana', 'peach']
+        organization: ['apple', 'banana', 'peach', 'apple-um']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
