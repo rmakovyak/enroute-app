@@ -1,3 +1,15 @@
+# v0.2.3 (Mon Jul 25 2022)
+
+#### 🐛 Bug Fix
+
+- Create redirects [#7](https://github.com/rmakovyak/enroute-app/pull/7) ([@rmakovyak](https://github.com/rmakovyak))
+
+#### Authors: 1
+
+- Roman Makovyak ([@rmakovyak](https://github.com/rmakovyak))
+
+---
+
 # v0.2.2 (Mon Jul 25 2022)
 
 #### 🐛 Bug Fix
