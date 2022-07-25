@@ -29,7 +29,7 @@ jobs:
         with:
           mode: production
       - name: Build Project
-        run: yarn build
+        run: yarn build --base=${{ env.BASE_URL }}
         env:
           CI: true
       - name: Publish
