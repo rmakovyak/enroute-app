@@ -1,3 +1,16 @@
+# v0.2.4 (Mon Jul 25 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:rmakovyak/enroute-app ([@rmakovyak](https://github.com/rmakovyak))
+- Create _headers ([@rmakovyak](https://github.com/rmakovyak))
+
+#### Authors: 1
+
+- Roman Makovyak ([@rmakovyak](https://github.com/rmakovyak))
+
+---
+
 # v0.2.3 (Mon Jul 25 2022)
 
 #### 🐛 Bug Fix
