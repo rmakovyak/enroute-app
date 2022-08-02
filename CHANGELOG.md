@@ -1,3 +1,15 @@
+# v0.2.7 (Tue Aug 02 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update deploy-production.yml ([@rmakovyak](https://github.com/rmakovyak))
+
+#### Authors: 1
+
+- Roman Makovyak ([@rmakovyak](https://github.com/rmakovyak))
+
+---
+
 # v0.2.6 (Mon Jul 25 2022)
 
 #### ⚠️ Pushed to `main`
