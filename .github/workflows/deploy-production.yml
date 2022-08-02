@@ -2,7 +2,11 @@ name: Deploy to production
 
 on:
   workflow_dispatch:
-
+    inputs:
+      tags:
+        description: 'Test scenario tags'
+        required: true 
+        type: boolean
 jobs:
   deploy:
     strategy:
