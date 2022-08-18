@@ -23,7 +23,5 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: Erlich Bachman
+          SLACK_USERNAME: Erlich Bachmans
           SLACK_ICON: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
-          SLACK_MESSAGE: 'https://github.com/scoutbeedev/react-user-management/releases/tag/${GITHUB_REF#refs/*/}'
-          SLACK_TITLE: User Management was deployed to production
