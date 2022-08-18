@@ -10,9 +10,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: 8398a7/action-slack@v3
         with:
-          icon_url: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
+          icon_url: 'https://i.ibb.co/N3yXwmK/erlich-512x512.jpg'
+          # icon_emoji: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
           username: Erlich Bachman
-          text: User management deployed to production
+          author_name: User management was deployed to production
           status: 'success'
           fields: author,ref # selectable (default: repo,message)
         env:
