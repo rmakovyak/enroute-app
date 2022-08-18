@@ -1,0 +1,16 @@
+name: Deploy to production
+on:
+  workflow_dispatch:
+jobs:
+  read-orgs:
+    runs-on: ubuntu-latest
+    outputs:
+      data: ${{ steps.list-orgs.outputs.data }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took,pullRequest # selectable (default: repo,message)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
