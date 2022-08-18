@@ -8,19 +8,21 @@ jobs:
       data: ${{ steps.list-orgs.outputs.data }}
     steps:
       - uses: actions/checkout@v3
-      - uses: 8398a7/action-slack@v3
-        with:
-          icon_url: 'https://i.ibb.co/N3yXwmK/erlich-512x512.jpg'
-          username: Erlich Bachman
-          text: 'User management was deployed to production'
-          author_name: ''
-          status: 'success'
-          fields: author,ref # selectable (default: repo,message)
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
-      # - name: Slack Notification
-      #   uses: rtCamp/action-slack-notify@v2
+      # - uses: 8398a7/action-slack@v3
+      #   with:
+      #     icon_url: 'https://i.ibb.co/N3yXwmK/erlich-512x512.jpg'
+      #     username: Erlich Bachman
+      #     text: 'User management was deployed to production'
+      #     author_name: ''
+      #     status: 'success'
+      #     fields: author,ref # selectable (default: repo,message)
       #   env:
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      #     SLACK_USERNAME: Erlich Bachmans
-      #     SLACK_ICON: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Erlich Bachmansss
+          SLACK_ICON: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
+          SLACK_MESSAGE: User management was deployed to production ${{github.ref_name}}
+          MSG_MINIMAL: ref
