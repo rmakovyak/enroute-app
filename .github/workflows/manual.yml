@@ -22,6 +22,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MSG_AUTHOR: ''
           SLACK_USERNAME: Erlich Bachmansss
           SLACK_ICON: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
           SLACK_TITLE: User management was deployed to production
