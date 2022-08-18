@@ -25,5 +25,5 @@ jobs:
           SLACK_USERNAME: Erlich Bachmansss
           SLACK_ICON: https://i.ibb.co/N3yXwmK/erlich-512x512.jpg
           SLACK_TITLE: User management was deployed to production
-          SLACK_MESSAGE: '<a href="https://github.com/scoutbeedev/react-user-management/releases/tag/${{github.ref_name}}">Release notes for ${{github.ref_name}}</a>'
-          MSG_MINIMAL: true
+          SLACK_MESSAGE: 'Release notes: https://github.com/scoutbeedev/react-user-management/releases/tag/${{github.ref_name}}'
+          MSG_MINIMAL: ref
